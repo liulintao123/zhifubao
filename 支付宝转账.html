@@ -18,6 +18,7 @@
 	.head li{
 			float: right;
 			padding-left: 10px;
+			height: 30px;
 			position: relative;
 		}
 	.head li:hover .dh{
@@ -31,11 +32,16 @@
 			padding-right: 10px;
 		}
 	.head a{
-			color: #ffffff;
+			color: #f6f6f6;
 			font-size: 12px;
 			font-weight: bold;
+			display: block;
+			margin-top: 6px;
 		}
-	.head li a:hover{
+	.head li:hover{
+			background-color: #f6f6f6;
+		} 
+	.head li:hover a{
 			color:#e66e1e;
 			text-decoration: underline;
 		}
@@ -102,24 +108,41 @@
 	.right-head{
 		height:57px;
 		background-color: #f2f6fa;
-	}
+		}
 	.right-head li{
 			float: left;
 			padding-top: 20px;
 			margin-left: 50px;
-		}
+			}
+	.right-head li:hover{background-color: #ffffff;}
 	.right-head li a{
 			font-size: 18px;
 			color: #6b6c6c;
-		}
+			}
 	.right-head .right-right{
 			float: right;
-		}
+			}
 	.right-head .right-right a{
 			color: #0088cc;
 			font-size: 14px;
+			}
+	.sanjiao{
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			background-image:url(images/1PYbYdchYb.png);
+			background-position: -2px -402px;
+			margin-left: 5px;			
 		}
-	.dh{
+	.sanjiao1{
+			width: 10px;
+			height: 10px;
+			display: inline-block;
+			background-image:url(images/1PYbYdchYb.png);
+			background-position:-2px  -402px;
+			margin-left: 5px;			
+		}
+		.dh{
 			width: 300px;
 			height:150px;
 			background-color:rgba(255,255,255,0.7);
@@ -129,20 +152,88 @@
 			display: none;
 			margin-top: 10px;
 		}
-	.dh img{
+		.shang{
+			overflow: hidden;
+		}
+		.dh .shang img{
+			float: left;
+			margin-top: 10px;
+			margin-left: 20px;
+			margin-right: 20px;
 			width: 50px;
 			height: 50px;
 		}
+	.dh p{
+		display: block;
+		margin-top: 5px;
+		float: left;
+		}
+	.dh .pxian{
+		padding-right: 10px;
+		border-right: 1px solid gray;
+		color: #0088cc;
+		}
+	.dh .pxian1{
+		padding-left: 10px;
+		color: #0088cc;
+	}
+	.dh .xia{
+		margin-top: 10px;
+		height: 50px;
+		background-color: #f6f6f6;
+	}
+	.dh .xia span{
+		float: left;
+		margin-left:20px;
+		color:#0088cc;
+		margin-bottom:10px;  
+	}
+	.dh .xia .btn{
+		background-color: #f6f6f6;
+		border: 1px solid #e3e3e3;
+		border-radius:10%; 
+	}
+	.dh .xia2{
+		overflow: hidden;
+		height: 30px;
+		padding-left: 20px;
+		color: #0088cc;
+		background-color:#f6f6f6; 
+	}
+	.xia .xia2 span{
+		display: block;
+	}
+	.xia2 .xian{
+		padding-right: 5px;
+	}
 	.dh2{
-		width: 300px;
-		height:150px;
-		background-color:rgba(255,255,255,0.7);
+		width: 150px;
+		height:100px;
+		background-color:#ffffff;
 		position: absolute;
 		top:20px;
 		right:0;
 		display:none;
 		margin-top: 10px;
 		}
+		.dh2 .xian5{
+		border-bottom: 1px solid #6d6d6d;
+		}
+		.dh2 span{
+		font-size: 15px;
+		display: block;
+		padding-top: 10px;
+		padding-left: 20px;
+		padding-bottom: 10px;
+		}
+		.yinhangtu{
+			width: 126px;
+			height: 205px;
+			overflow: hidden;
+			display: inline-block;
+		}
+		.tuyincang{display: none;}
+		.tuyincang1{display: block;}
 	</style>
 </head>
 <body>
@@ -150,22 +241,36 @@
 		<div class="banner">
 			<div class="head">
 				<ul>
-					<li><a class="jiao"href="">服务大厅</a>
+					<li><a class="jiao"href="">服务大厅<div class="sanjiao1"></div></a>
 					<div class="dh2">
-						
+						<span class="xian5">常见问题</span>
+						<span class="xian5">自助服务</span>
+						<span>玩转支付宝</span>
 					</div>
 					</li>
 					<li><a class="xian" href="">安全中心</a></li>
 					<li><a class="xian" href="">我的支付宝</a></li>
 					<li><a class="xian" href="">退出</a></li>
-					<li><a class="jiao" href="">王大伟</a>
+					<li><a class="jiao" href="">你好，王大伟<div class="sanjiao"></div></a>
 						<div class="dh">
+						<div class="shang">
 							<img src="images/T1RU8eXa8XXXXXXXXX.jpg">
-							<span>wangdawei...@live.cn</span>
-
+							<p>wangdawei...@live.cn</p>
+							<p class="pxian">账户设置</p>
+							<p class="pxian1">交易记录</p>							
+						</div>
+						<div class="xia">
+							<span>账户余额 :</span>
+							<span class="btn">显示余额</span>
+							<span>充值</span>
+						</div>						
+							<div class="xia2">
+							<span class="xian">余额宝</span>
+							<span class="xian">理财</span>
+							<span>其他资产</span>
+							</div>
 						</div>
 					</li>
-					<li><a href="">你好，</a></li>
 				</ul>
 			</div>
 		</div>
@@ -201,9 +306,32 @@
 					<li class="right-right"><a href="">转账到银行记录</a></li>
 				</div>
 				<div class="neirong">
-					 收款方:<input text="text" id="input1">
+					 收款方:<input type="text" id="input1">
+				</div>
+				<div class="tuyincang">
+					<div class="yinhangtu">
+						<img src="images/bankgroup.jpg">
+					</div>
+					<div class="yinhangtu">
+						<img src="images/bankgroup.jpg">
+					</div>
+					<div class="yinhangtu">
+						<img src="images/bankgroup.jpg">
+					</div>
 				</div>			
 			</div>
-		</div>		
+		</div>
+		<script>
+		var input1=document.getElementById("input1")
+		var tuyincang=document.getElementsByClassName("tuyincang")[0]
+		input1.onclick=function(){
+			if(tuyincang.className=="tuyincang"){
+				tuyincang.className="tuyincang1"
+			}
+			else{
+				tuyincang.className="tuyincang"
+			}
+		}
+		</script>		
 </body>
 </html>
