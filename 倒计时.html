@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>倒计时</title>
+	<style>
+	*{margin: 0;padding:0;}
+	#daojishi{
+		width: 1000px;
+		height: 500px;
+		background-color: #f99;
+		margin: 200px auto;
+		text-align: center;
+		font-size: 42px;
+	}
+	</style>
+</head>
+<body>
+	<div id="daojishi"></div>
+	<script>
+	var daojishi=document.getElementById("daojishi")
+	function daoshu(){
+		var nowtime=new Date()
+		var aftertime=new Date()
+		var ri=aftertime.setDate(3)
+		var month=aftertime.setMonth(1)
+		var hour=aftertime.setHours(0)
+		var minute=aftertime.setMinutes(0)
+		var second=aftertime.setSeconds(0)
+		jiange=(aftertime-nowtime)/1000
+		ri=Math.floor(jiange/86400)
+		hour=Math.floor((jiange-ri*86400)/3600)
+		minute=Math.floor((jiange-ri*86400-hour*3600)/60)
+		second=Math.floor(jiange-ri*86400-hour*3600-minute*60)
+		daojishi.innerHTML="距离活动结束还有:"+ri+"天"+hour+"时"+minute+"分"+second+"秒"
+		}
+	setInterval(function(){		
+		daoshu()
+	},1000)
+		daoshu()
+	</script>
+</body>
+</html>

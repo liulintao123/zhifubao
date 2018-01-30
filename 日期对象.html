@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日期对象</title>
+</head>
+<body>
+	<h2 id="riqi"></h2>
+	<script>
+	var riqi=document.getElementById("riqi")
+	function gengxin(){
+		var date =new Date()
+		var tian =date.getDate()
+		var xingqi =date.getDay()
+		var nian =date.getFullYear()
+		var month =date.getMonth()+1
+		var hour =date.getHours()
+		var minute=date.getMinutes()
+		var second=date.getSeconds()
+		riqi.innerHTML="大家好，今天是："+nian+"年"+month+"月"+tian+"日"+hour+":"+minute+":"+second
+	}
+	setInterval(function(){		
+		gengxin()
+	},1000)
+		gengxin()
+	</script>
+</body>
+</html>

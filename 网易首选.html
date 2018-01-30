@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>网易倒计时</title>
+	<style>
+	*{margin: 0;padding: 0;}
+	h2{ 
+		margin-left: 500px;
+	}
+	#daojishi{
+		background-image: url(images/c9aeb62a3f79123d793d8c49b6698b09.jpg);
+		background-repeat: no-repeat;
+		height: 500px;
+		margin-left: 500px;
+		margin-top: 20px;
+		position: relative;
+		cursor: pointer;
+	}
+	p{
+		font-size: 28px;
+		position: absolute;
+		color: #615548;
+		top: 50px;
+		left: 70px;
+	}
+	.shijian{
+		font-size: 20px;
+		position: absolute;
+		top: 130px;
+		left: 57px;
+		color:#615548;
+	}
+	span{
+		width: 40px;
+		color:#fff;
+		font-size: 18px;
+		line-height: 40px;
+		background-color: #615548;
+		border-radius: 2px;
+		display: inline-block;
+		text-align: center;
+	}
+	.chakan{
+		position: absolute;
+		left: 57px;
+		bottom: 210px;
+		width: 110px;
+	    height: 30px;
+	    margin: 0 auto;
+	    line-height: 30px;
+	    color: #fff;
+	    font-size: 14px;
+	    background-color: #a7936e;
+	    cursor: pointer;
+	    text-align: center;
+	    border: 2px solid  #615548;
+	    border-radius:20px;
+	}
+	#shi{
+		position: absolute;
+		left: 50px;
+		top: 180px;
+	}
+	#fen{
+		position: absolute;
+		left: 95px;
+		top: 180px;
+	}
+	#miao{
+		position: absolute;
+		left: 140px;
+		top: 180px;
+	}
+	.dian1{
+		position:absolute;
+		left: 90px;
+		top: 190px;
+	}
+	.dian2{
+		position:absolute;
+		left: 135px;
+		top: 190px;
+	}
+	</style>
+</head>
+<body>
+	<h2>限时购</h2>
+	<div id="daojishi">
+		<p>18点场</p>
+		<div class="shijian">距离结束还剩</div>
+		<div class="kuang">
+			<span id="shi"></span>
+			<div class="dian1">:</div>
+			<span id="fen"></span>
+			<div class="dian2">:</div>
+			<span id="miao"></span>
+		</div>
+		<div class="chakan">查看全部 ></div>
+	</div>
+	<script>
+		var shi=document.getElementById("shi")
+		var fen=document.getElementById("fen")
+		var miao=document.getElementById("miao")
+		function daoshu(){
+			var nowtime=new Date()
+			var aftertime=new Date()
+			var ri=aftertime.setDate(30)
+			var month=aftertime.setMonth(0)
+			var hour=aftertime.setHours(22)
+			var minute=aftertime.setMinutes(0)
+			var second=aftertime.setSeconds(0)
+			jiange=(aftertime-nowtime)/1000
+			ri=Math.floor(jiange/86400)
+			h=Math.floor((jiange-ri*86400)/3600)
+			m=Math.floor((jiange-ri*86400-h*3600)/60)
+			se=Math.floor(jiange-ri*86400-h*3600-m*60)
+			if(h<10){
+				h="0"+h
+			}
+			if(m<10){
+				m="0"+m
+			}
+			if(se<10){
+				se="0"+se
+			}
+			shi.innerHTML=h
+			fen.innerHTML=m
+			miao.innerHTML=se
+		}
+		setInterval(function(){		
+			daoshu()
+		},1000)
+			daoshu()
+	</script>
+</body>
+</html>
